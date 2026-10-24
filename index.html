@@ -394,7 +394,7 @@
       background: 
         linear-gradient(180deg, rgba(7, 8, 10, 0.5) 0%, rgba(7, 8, 10, 0.98) 100%),
         radial-gradient(circle at 50% 25%, rgba(255, 229, 0, 0.1) 0%, transparent 60%),
-        url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
+        url('hero_car.jpg') center/cover no-repeat;
       border-bottom: 1px solid var(--border-subtle);
     }
 
@@ -1591,13 +1591,13 @@
       <div class="image-comparison-stage" id="compStage">
         <!-- BASE UNDERLYING LAYER: BEFORE (WITH SWIRL MARKS OVERLAY) -->
         <div class="base-layer-scratched">
-          <img src="https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?q=80&w=1600&auto=format&fit=crop" alt="Car paint with swirl scratches">
+          <img src="slider_hood.jpg" alt="Car paint with swirl scratches">
           <div class="swirl-scratch-layer"></div>
         </div>
 
         <!-- REVEAL LAYER: AFTER (SAME IMAGE, PURE 9H MIRROR GLOSS, CLIPPED WITHOUT STRETCH) -->
         <div class="reveal-layer-gloss" id="revealLayer">
-          <img src="https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?q=80&w=1600&auto=format&fit=crop" alt="Car paint after ceramic coating">
+          <img src="slider_hood.jpg" alt="Car paint after ceramic coating">
         </div>
 
         <!-- DIVIDER BAR -->
@@ -1803,7 +1803,7 @@
       <div class="service-deck-card">
         <div class="card-visual-header">
           <span class="chip-badge">УХОД И ЗАЩИТА</span>
-          <img src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?q=80&w=800&auto=format&fit=crop" alt="Детейлинг мойка">
+          <img src="service_wash.jpg" alt="Детейлинг мойка">
         </div>
         <div class="card-body-block">
           <h3 class="card-heading">Детейлинг-мойка в 3 фазы</h3>
@@ -1833,7 +1833,7 @@
       <div class="service-deck-card">
         <div class="card-visual-header">
           <span class="chip-badge">ХИТ ПРОДАЖ</span>
-          <img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?q=80&w=800&auto=format&fit=crop" alt="Полировка кузова">
+          <img src="service_polish.jpg" alt="Полировка кузова">
         </div>
         <div class="card-body-block">
           <h3 class="card-heading">Полировка кузова + Керамика 9H</h3>
@@ -1862,17 +1862,32 @@
       <!-- 3 -->
       <div class="service-deck-card">
         <div class="card-visual-header">
-          <span class="chip-badge">ИНТЕРЬЕР</span>
-          <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=800&auto=format&fit=crop" alt="Химчистка">
+          <span class="chip-badge">ЗАЩИТА КУЗОВА</span>
+          <img src="service_ppf.jpg" alt="Оклейка бронепленкой">
         </div>
         <div class="card-body-block">
-          <h3 class="card-heading">Полная химчистка салона</h3>
-          <p class="card-summary">Глубокая очистка всех поверхностей: кожи, алькантары, пластика, ковролина и багажника. Дезинфекция озоном и сушка.</p>
+          <h3 class="card-heading">Оклейка антигравийной пленкой (PPF)</h3>
+          <p class="card-summary">Надежный полиуретановый щит 190–210 микрон с функцией самозатягивания от царапин при нагреве. Защита зон риска и кузова целиком.</p>
           <ul class="benefit-checklist">
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-              Бережный демонтаж сидений при сильных загрязнениях
+              Защита от сколов, гравия, веток и притертостей на парковке
             </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              Гидрофобный Top Coat слой — авто пачкается в 3 раза меньше
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              Официальная гарантия студии на оклейку до 5 лет
+            </li>
+          </ul>
+          <div class="card-price-footer">
+            <div class="price-tag-big">от 45 000 ₽</div>
+            <button class="btn btn-ghost" style="padding:10px 18px; font-size:12px;" onclick="displayModal('Оклейка бронепленкой')">Записаться</button>
+          </div>
+        </div>
+      </div>
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
               Кондиционирование и питание кожи кремами Koch
