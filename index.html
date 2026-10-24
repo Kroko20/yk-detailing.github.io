@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>YK DETAILING | Сеть детейлинг-центров №1 в Саратове</title>
-  <meta name="description" content="Премиальный детейлинг автомобилей в Саратове: полировка кузова, оклейка полиуретановой бронепленкой, керамика 9H, химчистка. 3 филиала: Большая Садовая 239, Вольская 29.">
+  <meta name="description" content="Премиальный детейлинг автомобилей в Саратове: полировка кузова, оклейка полиуретановой бронепленкой, керамика 9H, химчистка. 3 филиала: Большая Садовая 239, Астраханская 1литЕ, Вольская 29.">
   
   <!-- OPEN GRAPH / PREVIEW FOR MESSENGERS -->
   <meta property="og:title" content="YK DETAILING | Премиальный детейлинг в Саратове">
@@ -1154,10 +1154,11 @@
     /* =========================================================
        BRANCH LOCATIONS
        ========================================================= */
+    .branches-triple-grid,
     .branches-dual-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 28px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
     }
 
     .branch-detail-box {
@@ -1455,6 +1456,7 @@
       .hint-instruction { display: none; }
 
       .cards-triple-grid { grid-template-columns: 1fr; }
+      .branches-triple-grid,
       .branches-dual-grid { grid-template-columns: 1fr; }
       .branch-detail-box { padding: 22px 18px; }
       .branch-btn-group { flex-direction: column; }
@@ -1907,7 +1909,7 @@
       <p class="section-subtext">Пылезащитные изолированные боксы, охраняемая территория и комфортная лаунж-зона для гостей.</p>
     </div>
 
-    <div class="branches-dual-grid">
+    <div class="branches-triple-grid">
       <!-- 1 -->
       <div class="branch-detail-box">
         <h3 class="branch-heading">Филиал «Большая Садовая»</h3>
@@ -1926,12 +1928,35 @@
           </span>
         </div>
         <div class="branch-btn-group">
-          <a href="https://yandex.ru/maps/?rtext=~Саратов,Большая%20Садовая%20239" target="_blank" class="btn btn-ghost" style="flex:1;">Яндекс Карты</a>
-          <button class="btn btn-yellow" style="flex:1;" onclick="displayModal('Большая Садовая 239')">Записаться сюда</button>
+          <a href="https://yandex.ru/maps/?rtext=~Саратов,Большая%20Садовая%20239" target="_blank" class="btn btn-ghost" style="flex:1;">Карты</a>
+          <button class="btn btn-yellow" style="flex:1;" onclick="displayModal('Большая Садовая 239')">Записаться</button>
         </div>
       </div>
 
       <!-- 2 -->
+      <div class="branch-detail-box">
+        <h3 class="branch-heading">Филиал «Астраханская»</h3>
+        <div class="branch-address-text">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          г. Саратов, ул. Астраханская, 1литЕ
+        </div>
+        <div class="branch-times-meta">
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            08:00 – 21:00 ежедневно
+          </span>
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            +7 (8452) 40-67-77 (доб. 2)
+          </span>
+        </div>
+        <div class="branch-btn-group">
+          <a href="https://yandex.ru/maps/?rtext=~Саратов,Астраханская%201литЕ" target="_blank" class="btn btn-ghost" style="flex:1;">Карты</a>
+          <button class="btn btn-yellow" style="flex:1;" onclick="displayModal('Астраханская 1литЕ')">Записаться</button>
+        </div>
+      </div>
+
+      <!-- 3 -->
       <div class="branch-detail-box">
         <h3 class="branch-heading">Филиал «Вольская» (Центр)</h3>
         <div class="branch-address-text">
@@ -1941,16 +1966,16 @@
         <div class="branch-times-meta">
           <span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            08:00 – 20:00 ежедневно
+            08:00 – 21:00 ежедневно
           </span>
           <span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            +7 (8452) 40-67-77 (доб. 2)
+            +7 (8452) 40-67-77 (доб. 3)
           </span>
         </div>
         <div class="branch-btn-group">
-          <a href="https://yandex.ru/maps/?rtext=~Саратов,Вольская%2029" target="_blank" class="btn btn-ghost" style="flex:1;">Яндекс Карты</a>
-          <button class="btn btn-yellow" style="flex:1;" onclick="displayModal('Вольская 29')">Записаться сюда</button>
+          <a href="https://yandex.ru/maps/?rtext=~Саратов,Вольская%2029" target="_blank" class="btn btn-ghost" style="flex:1;">Карты</a>
+          <button class="btn btn-yellow" style="flex:1;" onclick="displayModal('Вольская 29')">Записаться</button>
         </div>
       </div>
     </div>
@@ -2015,6 +2040,7 @@
             <label>Филиал в Саратове</label>
             <select id="leadBranch" class="form-input-element" style="background:#13161c;">
               <option>Большая Садовая ул., 239</option>
+              <option>Астраханская ул., 1литЕ</option>
               <option>Вольская ул., 29 (Центр)</option>
             </select>
           </div>
