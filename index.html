@@ -1,0 +1,2281 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>YK DETAILING | Сеть детейлинг-центров №1 в Саратове</title>
+  <meta name="description" content="Премиальный детейлинг автомобилей в Саратове: полировка кузова, оклейка полиуретановой бронепленкой, керамика 9H, химчистка. 3 филиала: Большая Садовая 239, Вольская 29.">
+  
+  <!-- OPEN GRAPH / PREVIEW FOR MESSENGERS -->
+  <meta property="og:title" content="YK DETAILING | Премиальный детейлинг в Саратове">
+  <meta property="og:description" content="Онлайн-расчет стоимости детейлинга с выгодой до 20%. Полировка, бронепленка, керамика 9H.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+
+  <!-- HUMAN AUTOMOTIVE TYPE SYSTEM: OSWALD + ONEST -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* =========================================================
+       COLOR PALETTE & DESIGN SYSTEM (YK BRANDING)
+       ========================================================= */
+    :root {
+      --bg-dark: #07080A;
+      --bg-surface: #0D0F14;
+      --bg-card: #12151D;
+      --bg-card-hover: #181C26;
+      
+      /* BRAND ACCENT: ELECTRIC RACING YELLOW */
+      --yellow: #FFE500;
+      --yellow-hover: #FFF04D;
+      --yellow-dim: rgba(255, 229, 0, 0.12);
+      --yellow-glow: rgba(255, 229, 0, 0.4);
+      
+      --text-white: #FFFFFF;
+      --text-main: #E2E8F0;
+      --text-secondary: #94A3B8;
+      --text-muted: #64748B;
+      
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-active: var(--yellow);
+      --border-glow: rgba(255, 229, 0, 0.45);
+      
+      --font-headline: 'Oswald', -apple-system, sans-serif;
+      --font-ui: 'Onest', -apple-system, BlinkMacSystemFont, sans-serif;
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    html, body {
+      max-width: 100vw;
+      overflow-x: hidden;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-ui);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4, .font-heading {
+      font-family: var(--font-headline);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-white);
+      line-height: 1.1;
+    }
+
+    /* =========================================================
+       ANIMATIONS & TRANSITIONS (ACCELERATED & NATURAL)
+       ========================================================= */
+    /* Scroll reveal transitions */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal-on-scroll.is-revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Shimmer button animation */
+    @keyframes sweepGlow {
+      0% { transform: translateX(-150%) skewX(-20deg); }
+      35% { transform: translateX(250%) skewX(-20deg); }
+      100% { transform: translateX(250%) skewX(-20deg); }
+    }
+
+    .shimmer-btn {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .shimmer-btn::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 40%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+      animation: sweepGlow 4s infinite ease-in-out;
+      pointer-events: none;
+    }
+
+    /* Slider handle subtle breathing animation */
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 20px var(--yellow-glow); transform: translate(-50%, -50%) scale(1); }
+      50% { box-shadow: 0 0 35px rgba(255, 229, 0, 0.75); transform: translate(-50%, -50%) scale(1.06); }
+    }
+
+    /* =========================================================
+       COMPACT SALES NOTICE RIBBON
+       ========================================================= */
+    .top-sales-banner {
+      background: #0F1218;
+      border-bottom: 1px solid rgba(255, 229, 0, 0.25);
+      padding: 8px 20px;
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .banner-badge {
+      background: var(--yellow);
+      color: #000;
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 11px;
+      padding: 2px 7px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+    }
+
+    .banner-text {
+      color: #CBD5E1;
+      font-size: 13px;
+    }
+
+    .banner-text b {
+      color: #fff;
+    }
+
+    .banner-action-link {
+      background: var(--yellow-dim);
+      border: 1px solid var(--yellow);
+      color: var(--yellow);
+      font-family: var(--font-headline);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 6px;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      transition: all 0.2s;
+    }
+
+    .banner-action-link:hover {
+      background: var(--yellow);
+      color: #000;
+    }
+
+    /* =========================================================
+       STICKY HEADER
+       ========================================================= */
+    header {
+      background: rgba(7, 8, 10, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      position: sticky;
+      top: 0;
+      z-index: 900;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      transition: background 0.3s;
+    }
+
+    .header-layout {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-emblem {
+      width: 40px;
+      height: 40px;
+      background: var(--yellow);
+      color: #000;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 20px;
+      box-shadow: 0 0 18px var(--yellow-glow);
+      transition: transform 0.25s;
+    }
+
+    .brand-group:hover .brand-emblem {
+      transform: rotate(-3deg) scale(1.05);
+    }
+
+    .brand-text-block {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-main-title {
+      font-family: var(--font-headline);
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+      letter-spacing: 0.05em;
+    }
+
+    .brand-sub-badge {
+      font-size: 10px;
+      font-weight: 800;
+      color: var(--yellow);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-top: 3px;
+    }
+
+    .desktop-nav {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .desktop-nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      position: relative;
+      padding: 4px 0;
+      transition: color 0.2s;
+    }
+
+    .desktop-nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--yellow);
+      transition: width 0.25s ease;
+    }
+
+    .desktop-nav a:hover {
+      color: #fff;
+    }
+
+    .desktop-nav a:hover::after {
+      width: 100%;
+    }
+
+    .header-right-side {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .phone-summary {
+      text-align: right;
+    }
+
+    .phone-link {
+      font-family: var(--font-headline);
+      font-size: 17px;
+      font-weight: 600;
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      transition: color 0.2s;
+    }
+
+    .phone-link:hover {
+      color: var(--yellow);
+    }
+
+    .hours-tag {
+      font-size: 11px;
+      color: #2ed573;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 5px;
+      font-weight: 600;
+    }
+
+    .status-dot-green {
+      width: 6px;
+      height: 6px;
+      background: #2ed573;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #2ed573;
+      animation: pingGlow 2s infinite;
+    }
+
+    @keyframes pingGlow {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.3); }
+    }
+
+    /* BUTTONS */
+    .btn {
+      font-family: var(--font-headline);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 12px 24px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      border: none;
+    }
+
+    .btn svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    .btn-yellow {
+      background: var(--yellow);
+      color: #000;
+      box-shadow: 0 4px 20px var(--yellow-glow);
+    }
+
+    .btn-yellow:hover {
+      background: var(--yellow-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(255, 229, 0, 0.6);
+    }
+
+    .btn-ghost {
+      background: rgba(255, 255, 255, 0.04);
+      color: #fff;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .btn-ghost:hover {
+      background: var(--yellow-dim);
+      border-color: var(--yellow);
+      color: var(--yellow);
+      transform: translateY(-1px);
+    }
+
+    /* =========================================================
+       HERO SECTION
+       ========================================================= */
+    .hero-view {
+      position: relative;
+      padding: 90px 24px 70px;
+      background: 
+        linear-gradient(180deg, rgba(7, 8, 10, 0.5) 0%, rgba(7, 8, 10, 0.98) 100%),
+        radial-gradient(circle at 50% 25%, rgba(255, 229, 0, 0.1) 0%, transparent 60%),
+        url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .hero-center-box {
+      max-width: 1020px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .kicker-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 229, 0, 0.08);
+      border: 1px solid rgba(255, 229, 0, 0.35);
+      color: var(--yellow);
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .kicker-chip svg {
+      width: 14px;
+      height: 14px;
+      color: var(--yellow);
+    }
+
+    .hero-headline {
+      font-size: 58px;
+      font-weight: 700;
+      line-height: 1.05;
+      margin-bottom: 22px;
+      color: #fff;
+    }
+
+    .hero-headline .yellow-glow {
+      color: var(--yellow);
+      text-shadow: 0 0 35px var(--yellow-glow);
+    }
+
+    .hero-lead {
+      font-size: 18px;
+      color: var(--text-secondary);
+      max-width: 700px;
+      margin: 0 auto 36px;
+      font-weight: 400;
+    }
+
+    .hero-button-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 56px;
+    }
+
+    /* TRUST BAR */
+    .trust-metrics-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      background: rgba(18, 21, 29, 0.75);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 22px 28px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .metric-cell {
+      text-align: center;
+      border-right: 1px solid var(--border-subtle);
+      transition: transform 0.25s;
+    }
+    .metric-cell:last-child {
+      border-right: none;
+    }
+    .metric-cell:hover {
+      transform: translateY(-2px);
+    }
+
+    .metric-digit {
+      font-family: var(--font-headline);
+      font-size: 32px;
+      font-weight: 700;
+      color: #fff;
+      display: block;
+      margin-bottom: 2px;
+      line-height: 1;
+    }
+
+    .metric-digit span {
+      color: var(--yellow);
+    }
+
+    .metric-caption {
+      font-size: 13px;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    /* =========================================================
+       SECTION STANDARD
+       ========================================================= */
+    section {
+      padding: 90px 24px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .section-title-wrap {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 48px;
+    }
+
+    .section-small-badge {
+      color: var(--yellow);
+      font-family: var(--font-headline);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .section-main-heading {
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .section-subtext {
+      font-size: 16px;
+      color: var(--text-secondary);
+    }
+
+    /* =========================================================
+       BEFORE / AFTER: BULLETPROOF OPTICAL SLIDER
+       ========================================================= */
+    .comparison-wrapper {
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    /* Dedicated Top Control Bar (NEVER CLIPPED, 100% VISIBLE) */
+    .slider-status-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      padding: 14px 22px;
+      background: #11141B;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .status-badge-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-headline);
+      font-size: 14px;
+      letter-spacing: 0.5px;
+    }
+
+    .dot-indicator {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .dot-before {
+      background: #FF5252;
+      box-shadow: 0 0 10px rgba(255, 82, 82, 0.6);
+    }
+
+    .dot-after {
+      background: var(--yellow);
+      box-shadow: 0 0 10px var(--yellow-glow);
+    }
+
+    .hint-instruction {
+      font-size: 13px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Single-image stage: zero stretch */
+    .image-comparison-stage {
+      position: relative;
+      width: 100%;
+      height: 520px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 2px solid var(--border-subtle);
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.85);
+      user-select: none;
+      touch-action: none;
+      cursor: ew-resize;
+    }
+
+    /* BASE UNDERLYING LAYER: BEFORE (SWIRL MARKS + DULL MATTE FILTER) */
+    .base-layer-scratched {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .base-layer-scratched img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: contrast(75%) brightness(80%) saturate(60%);
+    }
+
+    /* REAL CONCENTRIC SWIRL SCRATCH TEXTURE OVERLAY */
+    .swirl-scratch-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('swirl_scratches.png') center/cover no-repeat;
+      pointer-events: none;
+      mix-blend-mode: screen;
+      opacity: 0.9;
+    }
+
+    /* REVEAL LAYER: AFTER (SAME IMAGE, PURE 9H MIRROR GLOSS, CLIPPED WITHOUT STRETCH) */
+    .reveal-layer-gloss {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+      will-change: clip-path;
+    }
+
+    .reveal-layer-gloss img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: contrast(120%) brightness(105%) saturate(120%);
+    }
+
+    /* DIVIDER LINE */
+    .divider-drag-bar {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 3px;
+      height: 100%;
+      background: var(--yellow);
+      box-shadow: 0 0 20px var(--yellow-glow);
+      transform: translateX(-50%);
+      z-index: 10;
+    }
+
+    .drag-button-handle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 46px;
+      height: 46px;
+      transform: translate(-50%, -50%);
+      background: var(--yellow);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 25px var(--yellow-glow);
+      color: #000;
+      border: 3px solid #000;
+      animation: pulseGlow 3.5s infinite ease-in-out;
+      transition: transform 0.15s ease;
+    }
+
+    .image-comparison-stage:hover .drag-button-handle {
+      animation: none;
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    .drag-button-handle svg {
+      width: 18px;
+      height: 18px;
+      stroke: #000;
+      stroke-width: 2.5;
+    }
+
+    /* =========================================================
+       CALCULATOR SECTION (INTERACTIVE LUXURY CONFIGURATOR)
+       ========================================================= */
+    .calc-board {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 44px;
+      position: relative;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
+    }
+
+    .calc-step-row {
+      font-family: var(--font-headline);
+      font-size: 18px;
+      font-weight: 600;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .step-number-chip {
+      width: 26px;
+      height: 26px;
+      background: var(--yellow);
+      color: #000;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    /* VEHICLE CLASS SELECTOR (ELEVATED 3D FEEL) */
+    .vehicle-selector-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 38px;
+    }
+
+    .vehicle-box {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 22px 16px;
+      text-align: center;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .vehicle-box:hover {
+      background: var(--bg-card-hover);
+      border-color: rgba(255, 255, 255, 0.25);
+      transform: translateY(-3px);
+    }
+
+    .vehicle-box.active {
+      background: var(--yellow-dim);
+      border-color: var(--yellow);
+      box-shadow: 0 0 25px rgba(255, 229, 0, 0.25);
+      transform: translateY(-3px);
+    }
+
+    .vehicle-box.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 20%;
+      right: 20%;
+      height: 2px;
+      background: var(--yellow);
+      box-shadow: 0 0 10px var(--yellow);
+    }
+
+    .car-vector-glyph {
+      width: 56px;
+      height: 32px;
+      margin: 0 auto 12px;
+      display: block;
+      color: var(--text-secondary);
+      transition: color 0.2s, transform 0.25s;
+    }
+
+    .vehicle-box:hover .car-vector-glyph,
+    .vehicle-box.active .car-vector-glyph {
+      color: var(--yellow);
+      transform: scale(1.08);
+    }
+
+    .vehicle-name {
+      font-family: var(--font-headline);
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .vehicle-models {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .vehicle-tag {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 9px;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-muted);
+    }
+
+    .vehicle-box.active .vehicle-tag {
+      background: var(--yellow);
+      color: #000;
+    }
+
+    /* SERVICE CATEGORY FILTER CHIPS */
+    .calc-filters-strip {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .calc-filter-pill {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-subtle);
+      border-radius: 999px;
+      padding: 6px 16px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .calc-filter-pill:hover {
+      border-color: rgba(255, 255, 255, 0.3);
+      color: #fff;
+    }
+
+    .calc-filter-pill.active {
+      background: var(--yellow-dim);
+      border-color: var(--yellow);
+      color: var(--yellow);
+    }
+
+    /* SERVICE TILES WITH TOGGLE SWITCHES */
+    .services-choice-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 36px;
+    }
+
+    .service-tile-item {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      user-select: none;
+      position: relative;
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .service-tile-item:hover {
+      background: var(--bg-card-hover);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .service-tile-item.active {
+      background: var(--yellow-dim);
+      border-color: var(--yellow);
+      box-shadow: 0 4px 20px rgba(255, 229, 0, 0.15);
+    }
+
+    .tile-left-content {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    /* Modern toggle switch for services */
+    .toggle-switch-ui {
+      width: 38px;
+      height: 22px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 999px;
+      position: relative;
+      transition: background 0.25s;
+      flex-shrink: 0;
+    }
+
+    .service-tile-item.active .toggle-switch-ui {
+      background: var(--yellow);
+    }
+
+    .toggle-thumb {
+      width: 16px;
+      height: 16px;
+      background: #fff;
+      border-radius: 50%;
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s;
+    }
+
+    .service-tile-item.active .toggle-thumb {
+      transform: translateX(16px);
+      background: #000;
+    }
+
+    .tile-text-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tile-service-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .tile-badge-hint {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .service-tile-item.active .tile-badge-hint {
+      color: var(--yellow);
+    }
+
+    .tile-service-cost {
+      font-family: var(--font-headline);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--yellow);
+      white-space: nowrap;
+      margin-left: 10px;
+      transition: transform 0.2s;
+    }
+
+    .service-tile-item:hover .tile-service-cost {
+      transform: scale(1.05);
+    }
+
+    /* SUMMARY ROW WITH ANIMATED RECEIPT */
+    .summary-action-row {
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      background: rgba(255, 255, 255, 0.01);
+      border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    }
+
+    .summary-figures-block {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .summary-figures-block .summary-label {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-bottom: 4px;
+    }
+
+    .price-value-container {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+
+    .total-rubles-number {
+      font-family: var(--font-headline);
+      font-size: 46px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+      letter-spacing: 0.02em;
+    }
+
+    .ruble-sign {
+      font-family: var(--font-headline);
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--yellow);
+    }
+
+    .discount-pill-green {
+      background: rgba(46, 213, 115, 0.15);
+      border: 1px solid #2ed573;
+      color: #2ed573;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .selected-summary-pills {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    /* =========================================================
+       SERVICES CARDS
+       ========================================================= */
+    .cards-triple-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .service-deck-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .service-deck-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--border-glow);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+    }
+
+    .card-visual-header {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+    }
+
+    .card-visual-header img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .service-deck-card:hover .card-visual-header img {
+      transform: scale(1.08);
+    }
+
+    .chip-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(8px);
+      color: var(--yellow);
+      font-family: var(--font-headline);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      padding: 4px 10px;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 229, 0, 0.35);
+    }
+
+    .card-body-block {
+      padding: 24px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-heading {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .card-summary {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 18px;
+      flex-grow: 1;
+    }
+
+    .benefit-checklist {
+      list-style: none;
+      margin-bottom: 22px;
+    }
+
+    .benefit-checklist li {
+      font-size: 13px;
+      color: #CBD5E1;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .benefit-checklist li svg {
+      width: 14px;
+      height: 14px;
+      color: var(--yellow);
+      flex-shrink: 0;
+    }
+
+    .card-price-footer {
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .price-tag-big {
+      font-family: var(--font-headline);
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    /* =========================================================
+       BRANCH LOCATIONS
+       ========================================================= */
+    .branches-dual-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+
+    .branch-detail-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 36px;
+      position: relative;
+      transition: all 0.3s;
+    }
+
+    .branch-detail-box:hover {
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-3px);
+    }
+
+    .branch-detail-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 36px;
+      width: 60px;
+      height: 3px;
+      background: var(--yellow);
+    }
+
+    .branch-heading {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .branch-address-text {
+      font-size: 16px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    .branch-address-text svg {
+      width: 18px;
+      height: 18px;
+      color: var(--yellow);
+      flex-shrink: 0;
+    }
+
+    .branch-times-meta {
+      display: flex;
+      gap: 20px;
+      color: var(--text-secondary);
+      font-size: 14px;
+      margin-bottom: 26px;
+      flex-wrap: wrap;
+    }
+
+    .branch-times-meta span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .branch-times-meta svg {
+      width: 15px;
+      height: 15px;
+      color: var(--yellow);
+    }
+
+    .branch-btn-group {
+      display: flex;
+      gap: 12px;
+    }
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+    footer {
+      background: #040507;
+      border-top: 1px solid var(--border-subtle);
+      padding: 60px 24px 30px;
+    }
+
+    .footer-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .footer-disclaimer {
+      max-width: 1280px;
+      margin: 24px auto 0;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* =========================================================
+       MODAL POPUP
+       ========================================================= */
+    .modal-curtain {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(12px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .modal-curtain.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .modal-inner-card {
+      background: #11141A;
+      border: 1px solid var(--yellow);
+      border-radius: var(--radius-lg);
+      max-width: 480px;
+      width: 100%;
+      padding: 38px;
+      position: relative;
+      box-shadow: 0 0 80px rgba(255, 229, 0, 0.25);
+      transform: translateY(20px);
+      transition: transform 0.25s ease;
+    }
+
+    .modal-curtain.active .modal-inner-card {
+      transform: translateY(0);
+    }
+
+    .close-x-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 26px;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .form-row {
+      margin-bottom: 18px;
+    }
+
+    .form-row label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-secondary);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .form-input-element {
+      width: 100%;
+      padding: 14px 16px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      color: #fff;
+      font-family: inherit;
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-input-element:focus {
+      border-color: var(--yellow);
+    }
+
+    /* FLOATING WHATSAPP BUTTON */
+    .floating-support-btn {
+      position: fixed;
+      bottom: 26px;
+      right: 26px;
+      z-index: 850;
+    }
+
+    .whatsapp-circle {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--yellow);
+      color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 8px 30px var(--yellow-glow);
+      transition: all 0.2s;
+    }
+
+    .whatsapp-circle svg {
+      width: 28px;
+      height: 28px;
+      fill: #000;
+    }
+
+    .whatsapp-circle:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 40px rgba(255, 229, 0, 0.65);
+    }
+
+    /* =========================================================
+       FLAWLESS MOBILE & TABLET RESPONSIVENESS
+       ========================================================= */
+    @media (max-width: 1024px) {
+      .hero-headline { font-size: 46px; }
+      .vehicle-selector-grid { grid-template-columns: repeat(2, 1fr); }
+      .services-choice-grid { grid-template-columns: repeat(2, 1fr); }
+      .cards-triple-grid { grid-template-columns: repeat(2, 1fr); }
+      .trust-metrics-strip { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+      .metric-cell { border-right: none; }
+    }
+
+    @media (max-width: 768px) {
+      .top-sales-banner {
+        font-size: 11px;
+        padding: 6px 12px;
+        justify-content: center;
+        text-align: center;
+      }
+      .banner-action-link { display: none; }
+
+      header {
+        height: 58px;
+        top: 0;
+      }
+      .header-layout {
+        padding: 0 16px;
+      }
+      .desktop-nav { display: none; }
+      .phone-summary { display: none; }
+      .btn { padding: 10px 16px; font-size: 12px; }
+
+      .hero-view {
+        padding: 40px 16px 36px;
+      }
+      .hero-headline {
+        font-size: 32px;
+        line-height: 1.1;
+        margin-bottom: 16px;
+      }
+      .hero-lead {
+        font-size: 15px;
+        margin-bottom: 24px;
+      }
+      .hero-button-row {
+        flex-direction: column;
+        margin-bottom: 36px;
+      }
+      .hero-button-row .btn {
+        width: 100%;
+      }
+
+      .trust-metrics-strip {
+        padding: 16px 12px;
+        gap: 12px;
+      }
+      .metric-digit { font-size: 24px; }
+      .metric-caption { font-size: 11px; }
+
+      section { padding: 50px 16px; }
+      .calc-board { padding: 20px 14px; }
+      .vehicle-selector-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .vehicle-box { padding: 14px 10px; }
+      .car-vector-glyph { width: 44px; height: 26px; }
+      .vehicle-name { font-size: 13px; }
+      .services-choice-grid { grid-template-columns: 1fr; gap: 10px; }
+      .summary-action-row { flex-direction: column; align-items: stretch; text-align: center; }
+      .price-value-container { justify-content: center; }
+      .summary-action-row .btn { width: 100%; }
+
+      .image-comparison-stage { height: 320px; }
+      .slider-status-bar { flex-direction: column; align-items: flex-start; gap: 8px; font-size: 12px; }
+      .hint-instruction { display: none; }
+
+      .cards-triple-grid { grid-template-columns: 1fr; }
+      .branches-dual-grid { grid-template-columns: 1fr; }
+      .branch-detail-box { padding: 22px 18px; }
+      .branch-btn-group { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================================
+       COMPACT SALES NOTICE RIBBON
+       ========================================================= -->
+  <div class="top-sales-banner">
+    <div style="display:flex; align-items:center; gap:8px;">
+      <span class="banner-badge">YK DEMO</span>
+      <span class="banner-text">
+        Внимание: старый сайт <b>ykdetailing.com</b> выдает 403 ошибку. Обновленная версия готова к запуску.
+      </span>
+    </div>
+    <a href="#calculator" class="banner-action-link">Калькулятор ↓</a>
+  </div>
+
+  <!-- =========================================================
+       STICKY HEADER
+       ========================================================= -->
+  <header>
+    <div class="header-layout">
+      <a href="#" class="brand-group">
+        <div class="brand-emblem">YK</div>
+        <div class="brand-text-block">
+          <div class="brand-main-title">YK DETAILING</div>
+          <span class="brand-sub-badge">Сеть №1 в Саратове</span>
+        </div>
+      </a>
+
+      <ul class="desktop-nav">
+        <li><a href="#services">Услуги</a></li>
+        <li><a href="#calculator">Калькулятор</a></li>
+        <li><a href="#comparison">До / После</a></li>
+        <li><a href="#branches">Филиалы</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+      </ul>
+
+      <div class="header-right-side">
+        <div class="phone-summary">
+          <a href="tel:+78452406777" class="phone-link">+7 (8452) 40-67-77</a>
+          <div class="hours-tag">
+            <span class="status-dot-green"></span>
+            <span>Ежедневно 08:00 – 20:00</span>
+          </div>
+        </div>
+        <button class="btn btn-yellow shimmer-btn" onclick="displayModal('Запись из шапки')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          Записаться
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       HERO BANNER
+       ========================================================= -->
+  <section class="hero-view">
+    <div class="hero-center-box">
+      <div class="kicker-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        Первая сеть детейлинг-центров в Саратове
+      </div>
+      
+      <h1 class="hero-headline">
+        Защита кузова и зеркальный блеск <br>
+        <span class="yellow-glow">для тех, кто ценит свой автомобиль</span>
+      </h1>
+      
+      <p class="hero-lead">
+        Премиальная оклейка полиуретановой бронепленкой SunTek & Llumar, восстановительная абразивная полировка, керамика 9H и химчистка салона. Официальная гарантия до 5 лет.
+      </p>
+
+      <div class="hero-button-row">
+        <a href="#calculator" class="btn btn-yellow shimmer-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg>
+          Рассчитать стоимость онлайн
+        </a>
+        <a href="https://wa.me/78452406777?text=Здравствуйте!%20Хочу%20узнать%20стоимость%20детейлинга%20в%20YK" target="_blank" class="btn btn-ghost">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.93 11.93 0 0 0 12.04 0C5.46 0 .11 5.35.11 11.93c0 2.1.55 4.15 1.6 5.96L0 24l6.29-1.65a11.88 11.88 0 0 0 5.75 1.48h.01c6.58 0 11.93-5.35 11.93-11.93 0-3.19-1.24-6.18-3.46-8.42z"/></svg>
+          Написать в WhatsApp
+        </a>
+      </div>
+
+      <div class="trust-metrics-strip">
+        <div class="metric-cell">
+          <span class="metric-digit">3</span>
+          <span class="metric-caption">Филиала в Саратове</span>
+        </div>
+        <div class="metric-cell">
+          <span class="metric-digit">10 000<span>+</span></span>
+          <span class="metric-caption">Обслуженных авто</span>
+        </div>
+        <div class="metric-cell">
+          <span class="metric-digit">до 5 <span>лет</span></span>
+          <span class="metric-caption">Официальной гарантии</span>
+        </div>
+        <div class="metric-cell">
+          <span class="metric-digit">100<span>%</span></span>
+          <span class="metric-caption">Оригинальные составы</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       BEFORE / AFTER: BULLETPROOF OPTICAL SLIDER (NO STRETCH)
+       ========================================================= -->
+  <section id="comparison" class="reveal-on-scroll">
+    <div class="section-title-wrap">
+      <span class="section-small-badge">Оптический срез работы</span>
+      <h2 class="section-main-heading">До и После полировки кузова</h2>
+      <p class="section-subtext">Потяните ползунок в центре: слева — реальная паутинка от щеток и помутнение лака, справа — глубокое зеркальное восстановление 9H.</p>
+    </div>
+
+    <div class="comparison-wrapper">
+      <!-- DEDICATED CONTROL BAR (NEVER CLIPPED, 100% VISIBLE) -->
+      <div class="slider-status-bar">
+        <div class="status-badge-item">
+          <span class="dot-indicator dot-before"></span>
+          <span style="color:#CBD5E1;">ДО: Паутинка, риски от моек и матовый налет</span>
+        </div>
+
+        <div class="hint-instruction">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 18l-6-6 6-6"/><path d="M16 6l6 6-6 6"/></svg>
+          <span>Двигайте разделитель</span>
+        </div>
+
+        <div class="status-badge-item">
+          <span class="dot-indicator dot-after"></span>
+          <span style="color:var(--yellow); font-weight:700;">ПОСЛЕ YK: Зеркальный глянец & Керамика 9H</span>
+        </div>
+      </div>
+
+      <!-- IMAGE STAGE -->
+      <div class="image-comparison-stage" id="compStage">
+        <!-- BASE UNDERLYING LAYER: BEFORE (WITH SWIRL MARKS OVERLAY) -->
+        <div class="base-layer-scratched">
+          <img src="https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?q=80&w=1600&auto=format&fit=crop" alt="Car paint with swirl scratches">
+          <div class="swirl-scratch-layer"></div>
+        </div>
+
+        <!-- REVEAL LAYER: AFTER (SAME IMAGE, PURE 9H MIRROR GLOSS, CLIPPED WITHOUT STRETCH) -->
+        <div class="reveal-layer-gloss" id="revealLayer">
+          <img src="https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?q=80&w=1600&auto=format&fit=crop" alt="Car paint after ceramic coating">
+        </div>
+
+        <!-- DIVIDER BAR -->
+        <div class="divider-drag-bar" id="dragBar">
+          <div class="drag-button-handle">
+            <svg viewBox="0 0 24 24" fill="none"><path d="m8 18-6-6 6-6"/><path d="m16 6 6 6-6 6"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       CALCULATOR SECTION (UPGRADED HIGH-TECH CONFIGURATOR)
+       ========================================================= -->
+  <section id="calculator" class="reveal-on-scroll">
+    <div class="section-title-wrap">
+      <span class="section-small-badge">Интерактивный конфигуратор</span>
+      <h2 class="section-main-heading">Калькулятор стоимости услуг</h2>
+      <p class="section-subtext">Выберите класс автомобиля и переключайте необходимые опции — расчет адаптируется на лету под габариты вашего авто.</p>
+    </div>
+
+    <div class="calc-board">
+      <!-- STEP 1: CAR SELECTOR WITH 3D POP -->
+      <div class="calc-step-row">
+        <span class="step-number-chip">1</span>
+        <span>Выберите класс автомобиля</span>
+      </div>
+
+      <div class="vehicle-selector-grid">
+        <div class="vehicle-box active" data-mult="1.0" onclick="chooseCarType(this)">
+          <span class="vehicle-tag">Базовый</span>
+          <svg class="car-vector-glyph" viewBox="0 0 64 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 22h52M12 22l4-10h22l8 10M17 26a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM47 26a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM24 12v10M36 12v10"/>
+          </svg>
+          <div class="vehicle-name">Седан / Хэтчбек</div>
+          <div class="vehicle-models">Camry, BMW 3, Octavia</div>
+        </div>
+
+        <div class="vehicle-box" data-mult="1.2" onclick="chooseCarType(this)">
+          <span class="vehicle-tag">+20% площадь</span>
+          <svg class="car-vector-glyph" viewBox="0 0 64 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 22h56M10 22l6-13h24l6 13M16 26a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM46 26a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM26 9v13M38 9v13"/>
+          </svg>
+          <div class="vehicle-name">Кроссовер</div>
+          <div class="vehicle-models">RAV4, BMW X3, Tiguan</div>
+        </div>
+
+        <div class="vehicle-box" data-mult="1.4" onclick="chooseCarType(this)">
+          <span class="vehicle-tag">+40% площадь</span>
+          <svg class="car-vector-glyph" viewBox="0 0 64 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 23h56M8 23l4-15h32l8 15M15 27a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9zM47 27a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9zM24 8v15M36 8v15"/>
+          </svg>
+          <div class="vehicle-name">Внедорожник</div>
+          <div class="vehicle-models">LC 300, BMW X7, Tahoe</div>
+        </div>
+
+        <div class="vehicle-box" data-mult="1.3" onclick="chooseCarType(this)">
+          <span class="vehicle-tag">Премиум</span>
+          <svg class="car-vector-glyph" viewBox="0 0 64 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 22h52M10 22l8-8h18l10 8M18 25a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM46 25a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM26 14v8"/>
+          </svg>
+          <div class="vehicle-name">Спорткар / Купе</div>
+          <div class="vehicle-models">Porsche 911, M8, AMG GT</div>
+        </div>
+      </div>
+
+      <!-- STEP 2: CATEGORY FILTER TABS -->
+      <div class="calc-step-row">
+        <span class="step-number-chip">2</span>
+        <span>Выберите услуги детейлинга</span>
+      </div>
+
+      <div class="calc-filters-strip">
+        <div class="calc-filter-pill active" data-filter="all" onclick="filterServices(this)">Все услуги (6)</div>
+        <div class="calc-filter-pill" data-filter="body" onclick="filterServices(this)">Кузов & Полировка</div>
+        <div class="calc-filter-pill" data-filter="film" onclick="filterServices(this)">Бронепленка (PPF)</div>
+        <div class="calc-filter-pill" data-filter="interior" onclick="filterServices(this)">Салон & Интерьер</div>
+      </div>
+
+      <!-- SERVICE TILES WITH TOGGLES & PER-CAR DYNAMIC PRICES -->
+      <div class="services-choice-grid">
+        <!-- 1 -->
+        <div class="service-tile-item active" data-category="body" data-base="1400" onclick="toggleServiceChoice(this)">
+          <div class="tile-left-content">
+            <div class="toggle-switch-ui">
+              <div class="toggle-thumb"></div>
+            </div>
+            <div class="tile-text-wrap">
+              <div class="tile-service-name">3-х фазная детейлинг-мойка</div>
+              <div class="tile-badge-hint">Базовый уход без царапин</div>
+            </div>
+          </div>
+          <div class="tile-service-cost" data-price-tag>1 400 ₽</div>
+        </div>
+
+        <!-- 2 -->
+        <div class="service-tile-item" data-category="interior" data-base="1900" onclick="toggleServiceChoice(this)">
+          <div class="tile-left-content">
+            <div class="toggle-switch-ui">
+              <div class="toggle-thumb"></div>
+            </div>
+            <div class="tile-text-wrap">
+              <div class="tile-service-name">3-х фазная мойка + салон</div>
+              <div class="tile-badge-hint">Комплексная чистота</div>
+            </div>
+          </div>
+          <div class="tile-service-cost" data-price-tag>1 900 ₽</div>
+        </div>
+
+        <!-- 3 -->
+        <div class="service-tile-item active" data-category="body" data-base="18000" onclick="toggleServiceChoice(this)">
+          <div class="tile-left-content">
+            <div class="toggle-switch-ui">
+              <div class="toggle-thumb"></div>
+            </div>
+            <div class="tile-text-wrap">
+              <div class="tile-service-name">Полировка кузова + Керамика 9H</div>
+              <div class="tile-badge-hint">ХИТ • Зеркало и гидрофоб</div>
+            </div>
+          </div>
+          <div class="tile-service-cost" data-price-tag>18 000 ₽</div>
+        </div>
+
+        <!-- 4 -->
+        <div class="service-tile-item" data-category="interior" data-base="15000" onclick="toggleServiceChoice(this)">
+          <div class="tile-left-content">
+            <div class="toggle-switch-ui">
+              <div class="toggle-thumb"></div>
+            </div>
+            <div class="tile-text-wrap">
+              <div class="tile-service-name">Полная химчистка салона</div>
+              <div class="tile-badge-hint">Озонирование и питание кожи</div>
+            </div>
+          </div>
+          <div class="tile-service-cost" data-price-tag>15 000 ₽</div>
+        </div>
+
+        <!-- 5 -->
+        <div class="service-tile-item" data-category="film" data-base="45000" onclick="toggleServiceChoice(this)">
+          <div class="tile-left-content">
+            <div class="toggle-switch-ui">
+              <div class="toggle-thumb"></div>
+            </div>
+            <div class="tile-text-wrap">
+              <div class="tile-service-name">Бронирование зон риска пленкой</div>
+              <div class="tile-badge-hint">SunTek 200 мкм • Защита от сколов</div>
+            </div>
+          </div>
+          <div class="tile-service-cost" data-price-tag>45 000 ₽</div>
+        </div>
+
+        <!-- 6 -->
+        <div class="service-tile-item" data-category="body" data-base="3500" onclick="toggleServiceChoice(this)">
+          <div class="tile-left-content">
+            <div class="toggle-switch-ui">
+              <div class="toggle-thumb"></div>
+            </div>
+            <div class="tile-text-wrap">
+              <div class="tile-service-name">Антидождь на все стекла</div>
+              <div class="tile-badge-hint">Чистый обзор в непогоду</div>
+            </div>
+          </div>
+          <div class="tile-service-cost" data-price-tag>3 500 ₽</div>
+        </div>
+      </div>
+
+      <!-- STEP 3: ANIMATED LIVE ESTIMATE & RECEIPT -->
+      <div class="summary-action-row">
+        <div class="summary-figures-block">
+          <div class="summary-label">Итоговая стоимость со скидкой 10%:</div>
+          <div class="price-value-container">
+            <div class="total-rubles-number" id="totalNumber">17 460</div>
+            <div class="ruble-sign">₽</div>
+            <div class="discount-pill-green">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              -10% ПЕРВЫЙ ВИЗИТ
+            </div>
+          </div>
+          <div class="selected-summary-pills" id="selectionSummary">Выбрано: 2 услуги • Седан / Хэтчбек</div>
+        </div>
+
+        <button class="btn btn-yellow shimmer-btn" onclick="displayModal('Заявка из калькулятора')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          Зафиксировать скидку 10% на первую запись
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SERVICES CARDS
+       ========================================================= -->
+  <section id="services" class="reveal-on-scroll">
+    <div class="section-title-wrap">
+      <span class="section-small-badge">Прайс-лист</span>
+      <h2 class="section-main-heading">Основные услуги сети</h2>
+      <p class="section-subtext">Каждая процедура выполняется по технологической карте с контролем толщины лака ультразвуковым толщиномером.</p>
+    </div>
+
+    <div class="cards-triple-grid">
+      <!-- 1 -->
+      <div class="service-deck-card">
+        <div class="card-visual-header">
+          <span class="chip-badge">УХОД И ЗАЩИТА</span>
+          <img src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?q=80&w=800&auto=format&fit=crop" alt="Детейлинг мойка">
+        </div>
+        <div class="card-body-block">
+          <h3 class="card-heading">Детейлинг-мойка в 3 фазы</h3>
+          <p class="card-summary">Деликатная бесконтактная очистка, ручная мойка пористой варежкой по технологии двух ведер, сушка турбосушкой без касаний.</p>
+          <ul class="benefit-checklist">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              Очистка дисков и выхлопных насадок от нагара
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              Прочистка кистями всех стыков, шильдиков и решеток
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              Кварцевая консервация ЛКП с гидрофобным эффектом
+            </li>
+          </ul>
+          <div class="card-price-footer">
+            <div class="price-tag-big">от 1 400 ₽</div>
+            <button class="btn btn-ghost" style="padding:10px 18px; font-size:12px;" onclick="displayModal('3-х фазная мойка')">Записаться</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="service-deck-card">
+        <div class="card-visual-header">
+          <span class="chip-badge">ХИТ ПРОДАЖ</span>
+          <img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?q=80&w=800&auto=format&fit=crop" alt="Полировка кузова">
+        </div>
+        <div class="card-body-block">
+          <h3 class="card-heading">Полировка кузова + Керамика 9H</h3>
+          <p class="card-summary">Восстановление заводской глубины цвета, удаление до 95% царапин и паутинок. Нанесение 2-3 слоев нанокерамики с гарантией.</p>
+          <ul class="benefit-checklist">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              Удаление металлических вкраплений и битума глиной
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              Трехэтапная абразивная полировка пастами Koch Chemie
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              Стойкий гидрофобный щит 9H сроком до 24 месяцев
+            </li>
+          </ul>
+          <div class="card-price-footer">
+            <div class="price-tag-big">от 18 000 ₽</div>
+            <button class="btn btn-yellow" style="padding:10px 18px; font-size:12px;" onclick="displayModal('Полировка + Керамика')">Записаться</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="service-deck-card">
+        <div class="card-visual-header">
+          <span class="chip-badge">ИНТЕРЬЕР</span>
+          <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=800&auto=format&fit=crop" alt="Химчистка">
+        </div>
+        <div class="card-body-block">
+          <h3 class="card-heading">Полная химчистка салона</h3>
+          <p class="card-summary">Глубокая очистка всех поверхностей: кожи, алькантары, пластика, ковролина и багажника. Дезинфекция озоном и сушка.</p>
+          <ul class="benefit-checklist">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              Бережный демонтаж сидений при сильных загрязнениях
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              Кондиционирование и питание кожи кремами Koch
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              Озонирование и полное удаление посторонних запахов
+            </li>
+          </ul>
+          <div class="card-price-footer">
+            <div class="price-tag-big">от 15 000 ₽</div>
+            <button class="btn btn-ghost" style="padding:10px 18px; font-size:12px;" onclick="displayModal('Химчистка салона')">Записаться</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       BRANCH LOCATIONS
+       ========================================================= -->
+  <section id="branches" class="reveal-on-scroll">
+    <div class="section-title-wrap">
+      <span class="section-small-badge">Локации сети</span>
+      <h2 class="section-main-heading">Филиалы в Саратове</h2>
+      <p class="section-subtext">Пылезащитные изолированные боксы, охраняемая территория и комфортная лаунж-зона для гостей.</p>
+    </div>
+
+    <div class="branches-dual-grid">
+      <!-- 1 -->
+      <div class="branch-detail-box">
+        <h3 class="branch-heading">Филиал «Большая Садовая»</h3>
+        <div class="branch-address-text">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          г. Саратов, ул. Большая Садовая, 239
+        </div>
+        <div class="branch-times-meta">
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            08:00 – 20:00 ежедневно
+          </span>
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            +7 (8452) 40-67-77 (доб. 1)
+          </span>
+        </div>
+        <div class="branch-btn-group">
+          <a href="https://yandex.ru/maps/?rtext=~Саратов,Большая%20Садовая%20239" target="_blank" class="btn btn-ghost" style="flex:1;">Яндекс Карты</a>
+          <button class="btn btn-yellow" style="flex:1;" onclick="displayModal('Большая Садовая 239')">Записаться сюда</button>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="branch-detail-box">
+        <h3 class="branch-heading">Филиал «Вольская» (Центр)</h3>
+        <div class="branch-address-text">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          г. Саратов, ул. Вольская, 29 (1 этаж)
+        </div>
+        <div class="branch-times-meta">
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            08:00 – 20:00 ежедневно
+          </span>
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            +7 (8452) 40-67-77 (доб. 2)
+          </span>
+        </div>
+        <div class="branch-btn-group">
+          <a href="https://yandex.ru/maps/?rtext=~Саратов,Вольская%2029" target="_blank" class="btn btn-ghost" style="flex:1;">Яндекс Карты</a>
+          <button class="btn btn-yellow" style="flex:1;" onclick="displayModal('Вольская 29')">Записаться сюда</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+  <footer id="contacts">
+    <div class="footer-container">
+      <div class="brand-group">
+        <div class="brand-emblem">YK</div>
+        <div class="brand-text-block">
+          <div class="brand-main-title">YK DETAILING</div>
+          <span class="brand-sub-badge">Сеть №1 в Саратове</span>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:16px; flex-wrap:wrap; align-items:center;">
+        <a href="https://vk.com/yk.detailing" target="_blank" class="btn btn-ghost">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.07 2H8.93C4.33 2 2 4.33 2 8.93v6.14C2 19.67 4.33 22 8.93 22h6.14c4.6 0 6.93-2.33 6.93-6.93V8.93C22 4.33 19.67 2 15.07 2zm3.38 12.81c-.24.38-.86.9-1.57 1.43-.88.66-1.55.93-1.89.93-.24 0-.41-.07-.58-.2-.25-.2-.53-.66-.82-1.35-.41-.98-.79-1.63-1.13-1.63-.12 0-.24.05-.37.15-.31.25-.43.74-.43 1.48 0 .52-.16.85-.48 1.01-.22.1-.56.14-1.02.14-1.32 0-2.61-.7-3.87-2.09-1.59-1.76-2.85-4.11-2.85-4.27 0-.17.15-.3.44-.3h1.83c.33 0 .54.12.67.36.42 1.08.97 2.19 1.63 3.16.27.4.49.59.66.59.1 0 .19-.07.27-.2.13-.23.19-.77.19-1.62 0-.96-.13-1.42-.4-1.6-.17-.11-.27-.15-.27-.24 0-.17.27-.35.8-.35h1.22c.45 0 .7.17.76.51.08.47.12 1.25.12 1.58 0 .42.06.66.19.78.08.07.17.11.27.11.16 0 .36-.18.6-.54.67-1.01 1.24-2.45 1.26-2.49.07-.15.23-.27.48-.27h1.88c.37 0 .55.15.55.44 0 .22-.21.84-.96 1.87-.64.88-.95 1.39-.95 1.53 0 .09.07.21.22.35.4.38 1.04 1.11 1.47 1.76z"/></svg>
+          ВКонтакте @yk.detailing
+        </a>
+        <a href="tel:+78452406777" class="btn btn-yellow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +7 (8452) 40-67-77
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-disclaimer">
+      © 2026 YK Detailing Saratov. Премиальный уход за автомобилями. Концепт для демонстрации клиенту.
+    </div>
+  </footer>
+
+  <!-- =========================================================
+       BOOKING MODAL
+       ========================================================= -->
+  <div class="modal-curtain" id="modalCurtain">
+    <div class="modal-inner-card">
+      <button class="close-x-btn" onclick="dismissModal()">&times;</button>
+      
+      <!-- FORM CONTAINER -->
+      <div id="modalFormContainer">
+        <h3 style="font-size:24px; margin-bottom:8px;">Запись в YK Detailing</h3>
+        <p style="color:var(--text-secondary); font-size:14px; margin-bottom:20px;">Оставьте номер — мастер свяжется в течение 5 минут для бронирования времени.</p>
+
+        <form onsubmit="handleModalForm(event)">
+          <div class="form-row">
+            <label>Ваше имя</label>
+            <input type="text" id="leadName" class="form-input-element" placeholder="Иван" required>
+          </div>
+          <div class="form-row">
+            <label>Номер телефона</label>
+            <input type="tel" id="leadPhone" class="form-input-element" placeholder="+7 (___) ___-__-__" value="+7 (" required>
+          </div>
+          <div class="form-row">
+            <label>Марка и модель авто</label>
+            <input type="text" id="leadCar" class="form-input-element" placeholder="BMW 5 / Camry / RAV4">
+          </div>
+          <div class="form-row">
+            <label>Филиал в Саратове</label>
+            <select id="leadBranch" class="form-input-element" style="background:#13161c;">
+              <option>Большая Садовая ул., 239</option>
+              <option>Вольская ул., 29 (Центр)</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-yellow shimmer-btn" style="width:100%; padding:16px;">
+            Подтвердить запись со скидкой 10%
+          </button>
+        </form>
+      </div>
+
+      <!-- SUCCESS CONFIRMATION CONTAINER (NO HANGING TABS) -->
+      <div id="modalSuccessContainer" style="display:none; text-align:center; padding: 10px 0;">
+        <div style="width:64px; height:64px; border-radius:50%; background:rgba(46, 213, 115, 0.15); border:2px solid #2ed573; display:flex; align-items:center; justify-content:center; margin:0 auto 16px; box-shadow:0 0 25px rgba(46, 213, 115, 0.35);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2ed573" stroke-width="3" style="width:32px; height:32px;"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3 style="font-size:24px; color:#fff; margin-bottom:6px;">Заявка принята!</h3>
+        <div style="display:inline-block; background:rgba(255, 229, 0, 0.12); border:1px solid var(--yellow); color:var(--yellow); font-family:var(--font-headline); font-size:13px; font-weight:700; padding:4px 12px; border-radius:6px; margin-bottom:14px;">
+          Бронь <span id="bookingCode">#YK-784</span> • Скидка 10% зафиксирована
+        </div>
+        <p style="color:var(--text-secondary); font-size:14px; margin-bottom:24px; line-height:1.6;">
+          Сумма по расчету: <strong style="color:#fff;" id="successPrice">17 460 ₽</strong>.<br>
+          Мастер смены филиала перезвонит на <strong style="color:#fff;" id="successPhone">номер</strong> в течение 5 минут.
+        </p>
+
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <a id="waDirectBtn" href="#" target="_blank" class="btn btn-yellow" style="width:100%; text-decoration:none;">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px; height:18px;"><path d="M20.52 3.48A11.93 11.93 0 0 0 12.04 0C5.46 0 .11 5.35.11 11.93c0 2.1.55 4.15 1.6 5.96L0 24l6.29-1.65a11.88 11.88 0 0 0 5.75 1.48h.01c6.58 0 11.93-5.35 11.93-11.93 0-3.19-1.24-6.18-3.46-8.42z"/></svg>
+            Открыть диалог в WhatsApp
+          </a>
+          <button class="btn btn-ghost" onclick="dismissModal()" style="width:100%;">
+            Готово, закрыть
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FLOATING QUICK WHATSAPP BUTTON -->
+  <div class="floating-support-btn">
+    <a href="https://wa.me/78452406777?text=Здравствуйте!%20Хочу%20записаться%20в%20YK%20Detailing" target="_blank" class="whatsapp-circle" title="Написать в WhatsApp">
+      <svg viewBox="0 0 24 24"><path d="M20.52 3.48A11.93 11.93 0 0 0 12.04 0C5.46 0 .11 5.35.11 11.93c0 2.1.55 4.15 1.6 5.96L0 24l6.29-1.65a11.88 11.88 0 0 0 5.75 1.48h.01c6.58 0 11.93-5.35 11.93-11.93 0-3.19-1.24-6.18-3.46-8.42zM12.05 21.82h-.01c-1.83 0-3.62-.49-5.18-1.42l-.37-.22-3.85 1.01 1.03-3.75-.24-.38a9.92 9.92 0 0 1-1.52-5.13c0-5.48 4.46-9.94 9.95-9.94 2.65 0 5.15 1.03 7.03 2.91a9.88 9.88 0 0 1 2.91 7.03c0 5.48-4.46 9.94-9.94 9.94zm5.44-7.43c-.3-.15-1.77-.87-2.04-.97-.28-.1-.48-.15-.68.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.68-1.63-.93-2.24-.24-.59-.49-.51-.68-.52h-.58c-.2 0-.52.07-.8.37-.27.3-1.05 1.03-1.05 2.51s1.08 2.91 1.23 3.11c.15.2 2.12 3.24 5.14 4.54.72.31 1.28.5 1.72.64.72.23 1.38.2 1.9.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg>
+    </a>
+  </div>
+
+  <!-- =========================================================
+       SCRIPTS: ANIMATED COUNTERS, FILTERS, ZERO-STRETCH SLIDER
+       ========================================================= -->
+  <script>
+    // 1. DYNAMIC CALCULATOR WITH ANIMATED NUMBER ROLLING
+    let currentMult = 1.0;
+    let currentCarTitle = "Седан / Хэтчбек";
+    let lastRenderedTotal = 17460;
+
+    function chooseCarType(box) {
+      document.querySelectorAll('.vehicle-box').forEach(b => b.classList.remove('active'));
+      box.classList.add('active');
+      currentMult = parseFloat(box.getAttribute('data-mult'));
+      currentCarTitle = box.querySelector('.vehicle-name').innerText;
+      
+      // Update individual price tags dynamically for the selected car class!
+      updateIndividualPrices();
+      calculateTotalCostAnimated();
+    }
+
+    function toggleServiceChoice(tile) {
+      tile.classList.toggle('active');
+      calculateTotalCostAnimated();
+    }
+
+    function updateIndividualPrices() {
+      document.querySelectorAll('.service-tile-item').forEach(tile => {
+        let base = parseInt(tile.getAttribute('data-base'), 10);
+        let adjusted = Math.round(base * currentMult);
+        let tag = tile.querySelector('[data-price-tag]');
+        if (tag) {
+          tag.innerText = adjusted.toLocaleString('ru-RU') + ' ₽';
+        }
+      });
+    }
+
+    function filterServices(pill) {
+      document.querySelectorAll('.calc-filter-pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      let cat = pill.getAttribute('data-filter');
+
+      document.querySelectorAll('.service-tile-item').forEach(tile => {
+        if (cat === 'all' || tile.getAttribute('data-category') === cat) {
+          tile.style.display = 'flex';
+        } else {
+          tile.style.display = 'none';
+        }
+      });
+    }
+
+    // Smooth counter animation
+    function animateCount(elem, start, end, duration = 350) {
+      let startTime = null;
+      function step(now) {
+        if (!startTime) startTime = now;
+        let progress = Math.min((now - startTime) / duration, 1);
+        let val = Math.floor(progress * (end - start) + start);
+        elem.innerText = val.toLocaleString('ru-RU');
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        } else {
+          elem.innerText = end.toLocaleString('ru-RU');
+        }
+      }
+      window.requestAnimationFrame(step);
+    }
+
+    function calculateTotalCostAnimated() {
+      let sum = 0;
+      let activeCount = 0;
+      document.querySelectorAll('.service-tile-item.active').forEach(tile => {
+        sum += parseInt(tile.getAttribute('data-base'), 10);
+        activeCount++;
+      });
+
+      let finalPrice = Math.round(sum * currentMult * 0.9);
+      let numElem = document.getElementById('totalNumber');
+      
+      animateCount(numElem, lastRenderedTotal, finalPrice);
+      lastRenderedTotal = finalPrice;
+
+      // Update summary text
+      document.getElementById('selectionSummary').innerText = `Выбрано: ${activeCount} ${pluralizeServices(activeCount)} • ${currentCarTitle}`;
+    }
+
+    function pluralizeServices(count) {
+      if (count === 1) return 'услуга';
+      if (count >= 2 && count <= 4) return 'услуги';
+      return 'услуг';
+    }
+
+    // 2. ZERO-STRETCH SINGLE-IMAGE OPTICAL REVEAL SLIDER
+    const stage = document.getElementById('compStage');
+    const revealLayer = document.getElementById('revealLayer');
+    const dragBar = document.getElementById('dragBar');
+    let dragging = false;
+
+    function positionDivider(clientX) {
+      const bounds = stage.getBoundingClientRect();
+      let offsetX = clientX - bounds.left;
+      let ratio = offsetX / bounds.width;
+      if (ratio < 0.04) ratio = 0.04;
+      if (ratio > 0.96) ratio = 0.96;
+      let pct = (ratio * 100).toFixed(2);
+
+      revealLayer.style.clipPath = `polygon(0 0, ${pct}% 0, ${pct}% 100%, 0 100%)`;
+      dragBar.style.left = `${pct}%`;
+    }
+
+    stage.addEventListener('mousedown', (e) => {
+      dragging = true;
+      positionDivider(e.clientX);
+    });
+
+    window.addEventListener('mouseup', () => dragging = false);
+
+    window.addEventListener('mousemove', (e) => {
+      if (!dragging) return;
+      positionDivider(e.clientX);
+    });
+
+    stage.addEventListener('touchstart', (e) => {
+      dragging = true;
+      positionDivider(e.touches[0].clientX);
+    }, { passive: true });
+
+    window.addEventListener('touchend', () => dragging = false);
+
+    window.addEventListener('touchmove', (e) => {
+      if (!dragging) return;
+      positionDivider(e.touches[0].clientX);
+    }, { passive: true });
+
+    // 3. INTERSECTION OBSERVER FOR SCROLL REVEAL ANIMATIONS
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+
+    // 4. PHONE AUTO-MASK & MODAL HANDLERS
+    const phoneInput = document.getElementById('leadPhone');
+    
+    phoneInput.addEventListener('focus', function() {
+      if (!this.value || this.value.trim() === '') {
+        this.value = '+7 (';
+      }
+    });
+
+    phoneInput.addEventListener('input', function(e) {
+      let raw = this.value.replace(/\D/g, '');
+      // Strip leading 7 or 8
+      if (raw.startsWith('7') || raw.startsWith('8')) {
+        raw = raw.substring(1);
+      }
+      let formatted = '+7 (';
+      if (raw.length > 0) {
+        formatted += raw.substring(0, 3);
+      }
+      if (raw.length >= 3) {
+        formatted += ') ' + raw.substring(3, 6);
+      }
+      if (raw.length >= 6) {
+        formatted += '-' + raw.substring(6, 8);
+      }
+      if (raw.length >= 8) {
+        formatted += '-' + raw.substring(8, 10);
+      }
+      this.value = formatted;
+    });
+
+    phoneInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Backspace' && this.value.length <= 4) {
+        e.preventDefault();
+      }
+    });
+
+    function displayModal(context) {
+      // Reset views
+      document.getElementById('modalFormContainer').style.display = 'block';
+      document.getElementById('modalSuccessContainer').style.display = 'none';
+
+      const m = document.getElementById('modalCurtain');
+      m.style.display = 'flex';
+      setTimeout(() => m.classList.add('active'), 10);
+    }
+
+    function dismissModal() {
+      const m = document.getElementById('modalCurtain');
+      m.classList.remove('active');
+      setTimeout(() => m.style.display = 'none', 250);
+    }
+
+    function handleModalForm(e) {
+      e.preventDefault();
+      const name = document.getElementById('leadName').value;
+      const phone = document.getElementById('leadPhone').value;
+      const car = document.getElementById('leadCar').value || 'Не указан';
+      const branch = document.getElementById('leadBranch').value;
+      const priceStr = lastRenderedTotal.toLocaleString('ru-RU') + ' ₽';
+      const randomCode = '#YK-' + Math.floor(100 + Math.random() * 900);
+
+      // Populate success view
+      document.getElementById('bookingCode').innerText = randomCode;
+      document.getElementById('successPrice').innerText = priceStr;
+      document.getElementById('successPhone').innerText = phone;
+
+      // Prepare direct WhatsApp link for optional user action
+      const waMsg = encodeURIComponent(`Здравствуйте! Моя бронь ${randomCode} с сайта YK Detailing:\nИмя: ${name}\nТелефон: ${phone}\nАвто: ${car}\nФилиал: ${branch}\nСумма: ${priceStr}`);
+      document.getElementById('waDirectBtn').href = `https://api.whatsapp.com/send/?phone=78452406777&text=${waMsg}`;
+
+      // Switch modal view to Success screen immediately (ZERO HANGING TABS!)
+      document.getElementById('modalFormContainer').style.display = 'none';
+      document.getElementById('modalSuccessContainer').style.display = 'block';
+    }
+
+    // Initialize
+    updateIndividualPrices();
+    calculateTotalCostAnimated();
+  </script>
+</body>
+</html>
