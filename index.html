@@ -1462,6 +1462,42 @@
       .branch-btn-group { flex-direction: column; }
     }
   </style>
+  <!-- SCHEMA.ORG AUTO REPAIR JSON-LD (SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "YK Detailing Саратов",
+    "image": "https://kroko20.github.io/yk-detailing.github.io/favicon.png",
+    "telephone": "+7-927-141-14-11",
+    "priceRange": "₽₽",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ул. Большая Садовая, 239",
+      "addressLocality": "Саратов",
+      "postalCode": "410005",
+      "addressCountry": "RU"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 51.5532,
+      "longitude": 46.0028
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "09:00",
+        "closes": "21:00"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "48"
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -2006,7 +2042,16 @@
       </div>
     </div>
 
-    <div class="footer-disclaimer">
+    <div class="footer-disclaimer" style="display:flex; flex-direction:column; gap:8px; border-top:1px solid rgba(255,255,255,0.06); padding-top:20px; font-size:11px; color:var(--text-muted); line-height:1.5;">
+      <div>
+        <strong>Правовое уведомление:</strong> Информация на сайте не является публичной офертой по смыслу ст. 437(2) Гражданского кодекса РФ. Окончательная стоимость работ рассчитывается мастером при осмотре автомобиля в боксе студии.
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-top:4px;">
+        <span>© 2026 Студия детейлинга «YK Detailing». Все права защищены.</span>
+        <a href="javascript:void(0)" onclick="openPrivacyModal()" style="color:#C0C0C8; text-decoration:underline;">Политика конфиденциальности (152-ФЗ)</a>
+      </div>
+    </div>
+    <div style="display:none;" class="footer-disclaimer-old">
       © 2026 YK Detailing Saratov. Премиальный уход за автомобилями. Концепт для демонстрации клиенту.
     </div>
   </footer>
@@ -2044,7 +2089,13 @@
               <option>Вольская ул., 29 (Центр)</option>
             </select>
           </div>
-          <button type="submit" class="btn btn-yellow shimmer-btn" style="width:100%; padding:16px;">
+          <div style="display:flex; align-items:flex-start; gap:10px; margin:16px 0 12px; text-align:left;">
+          <input type="checkbox" id="ykFzCheck" checked required style="margin-top:3px; accent-color:#FFD700; width:16px; height:16px; cursor:pointer;">
+          <label for="ykFzCheck" style="font-size:11px; color:var(--text-muted); line-height:1.45; cursor:pointer;">
+            Я даю согласие на обработку персональных данных в соответствии с <a href="javascript:void(0)" onclick="openPrivacyModal()" style="color:#FFD700; text-decoration:underline;">152-ФЗ РФ</a> и принимаю условия Политики конфиденциальности.
+          </label>
+        </div>
+        <button type="submit" class="btn btn-yellow shimmer-btn" style="width:100%; padding:16px;">
             Подтвердить запись со скидкой 10%
           </button>
         </form>
@@ -2308,6 +2359,49 @@
     // Initialize
     updateIndividualPrices();
     calculateTotalCostAnimated();
+  </script>
+
+  <!-- 152-FZ PRIVACY POLICY MODAL -->
+  <div class="modal-curtain" id="ykPrivacyModal" style="z-index:99999;">
+    <div class="modal-inner-card" style="max-width:680px; text-align:left; max-height:85vh; overflow-y:auto; padding:30px;">
+      <button class="close-x-btn" onclick="closePrivacyModal()">&times;</button>
+      <h3 style="font-family:var(--font-headline); font-size:18px; color:#FFF; margin-bottom:12px;">ПОЛИТИКА В ОТНОШЕНИИ ОБРАБОТКИ ПЕРСОНАЛЬНЫХ ДАННЫХ</h3>
+      <p style="font-size:12px; color:var(--text-muted); margin-bottom:18px;">В соответствии с Федеральным законом РФ № 152-ФЗ «О персональных данных»</p>
+      
+      <div style="font-size:12px; color:#A0A5B5; line-height:1.6; display:flex; flex-direction:column; gap:10px;">
+        <p><strong style="color:#FFF;">1. Общие положения.</strong> Настоящая Политика действует в отношении персональных данных, предоставляемых клиентами студии «YK Detailing» (г. Саратов, ул. Большая Садовая 239 / ул. Астраханская 1литЕ / ул. Вольская 29) при оформлении онлайн-заявок.</p>
+        <p><strong style="color:#FFF;">2. Состав данных:</strong> Фамилия, имя, номер телефона, марка автомобиля и технические cookies. Данные собираются исключительно в целях подтверждения бронирования времени в боксе и расчета персональных скидок.</p>
+        <p><strong style="color:#FFF;">3. Хранение и безопасность:</strong> Обработка производится на защищенных серверах на территории РФ. Данные не передаются третьим лицам. Срок хранения — до достижения целей обработки или отзыва согласия клиентом.</p>
+        <p><strong style="color:#FFF;">4. Отзыв согласия:</strong> Субъект данных имеет право в любой момент отозвать свое согласие, обратившись к администрации студии YK Detailing.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- COOKIE BANNER -->
+  <div id="ykCookieBanner" style="position:fixed; bottom:20px; left:20px; right:20px; max-width:440px; background:rgba(18,20,29,0.95); backdrop-filter:blur(15px); border:1px solid rgba(255,215,0,0.3); border-radius:14px; padding:16px 20px; z-index:9000; box-shadow:0 15px 40px rgba(0,0,0,0.8); display:flex; flex-direction:column; gap:10px; font-size:12px; color:#DDD;">
+    <div>Мы используем файлы cookie для корректной работы калькулятора и сохранения скидки в соответствии с 152-ФЗ.</div>
+    <div style="display:flex; align-items:center; gap:12px;">
+      <button onclick="acceptYkCookie()" class="btn btn-yellow" style="padding:6px 16px; font-size:11px;">Принять</button>
+      <a href="javascript:void(0)" onclick="openPrivacyModal()" style="color:#AAA; text-decoration:underline; font-size:11px;">Подробнее</a>
+    </div>
+  </div>
+
+  <script>
+    function openPrivacyModal() {
+      document.getElementById('ykPrivacyModal').classList.add('active');
+    }
+    function closePrivacyModal() {
+      document.getElementById('ykPrivacyModal').classList.remove('active');
+    }
+    function acceptYkCookie() {
+      document.getElementById('ykCookieBanner').style.display = 'none';
+      try { localStorage.setItem('yk_cookie_accepted', 'true'); } catch(e){}
+    }
+    try {
+      if (localStorage.getItem('yk_cookie_accepted') === 'true') {
+        document.getElementById('ykCookieBanner').style.display = 'none';
+      }
+    } catch(e){}
   </script>
 </body>
 </html>
